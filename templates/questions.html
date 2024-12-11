@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pertanyaan Minat</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #0073e6;
+            text-align: center;
+        }
+
+        .question {
+            margin-bottom: 20px;
+            padding: 10px;
+            background-color: #f0f8ff;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+        }
+
+        label {
+            display: block;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        input[type="radio"] {
+            margin-right: 10px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: #0073e6;
+            color: white;
+            text-decoration: none;
+            font-size: 1.2em;
+            border-radius: 6px;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .btn:hover {
+            background-color: #005bb5;
+        }
+
+        /* Hide all questions initially */
+        .question {
+            display: none;
+        }
+
+        /* Show the first question */
+        .question.show {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Pertanyaan Minat</h2>
+
+        <form method="POST" id="questionsForm">
+            <!-- Pertanyaan 1 -->
+            <div class="question" id="q1">
+                <label>Apa kamu suka menulis?</label>
+                <input type="radio" name="menulis" value="ya"> Ya
+                <input type="radio" name="menulis" value="tidak"> Tidak
+            </div>
+
+            <!-- Pertanyaan 2 -->
+            <div class="question" id="q2">
+                <label>Apa kamu suka membaca buku?</label>
+                <input type="radio" name="membaca" value="ya"> Ya
+                <input type="radio" name="membaca" value="tidak"> Tidak
+            </div>
+
+            <!-- Pertanyaan 3 -->
+            <div class="question" id="q3">
+                <label>Apa kamu suka olahraga?</label>
+                <input type="radio" name="olahraga" value="ya"> Ya
+                <input type="radio" name="olahraga" value="tidak"> Tidak
+            </div>
+
+            <!-- Pertanyaan 4 -->
+            <div class="question" id="q4">
+                <label>Apa kamu suka riset atau penelitian?</label>
+                <input type="radio" name="riset" value="ya"> Ya
+                <input type="radio" name="riset" value="tidak"> Tidak
+            </div>
+
+            <!-- Pertanyaan 5 -->
+            <div class="question" id="q5">
+                <label>Apa kamu aktif dalam pramuka?</label>
+                <input type="radio" name="pramuka" value="ya"> Ya
+                <input type="radio" name="pramuka" value="tidak"> Tidak
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="btn" id="submitBtn" style="display: none;">Kirim Jawaban</button>
+        </form>
+    </div>
+
+    <script>
+        let currentQuestion = 1;
+        const totalQuestions = 5; // Total pertanyaan
+        const form = document.getElementById('questionsForm');
+        const submitBtn = document.getElementById('submitBtn');
+
+        // Menampilkan pertanyaan pertama
+        document.getElementById(`q${currentQuestion}`).classList.add('show');
+
+        // Menambahkan event listener untuk form
+        form.addEventListener('change', function () {
+            // Menyembunyikan pertanyaan yang sedang ditampilkan
+            document.getElementById(`q${currentQuestion}`).classList.remove('show');
+            
+            // Meningkatkan nomor pertanyaan
+            currentQuestion++;
+
+            // Jika semua pertanyaan sudah ditampilkan, tampilkan tombol kirim
+            if (currentQuestion > totalQuestions) {
+                submitBtn.style.display = 'inline-block';
+            } else {
+                // Menampilkan pertanyaan selanjutnya
+                document.getElementById(`q${currentQuestion}`).classList.add('show');
+            }
+        });
+    </script>
+
+</body>
+</html>

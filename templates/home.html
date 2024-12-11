@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil Kampus</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        /* Header */
+        header {
+            background-color: #0073e6;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        /* Navbar */
+        nav {
+            background-color: #333;
+            padding: 10px 0;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2em;
+        }
+
+        nav ul li a:hover {
+            color: #ff9900;
+        }
+
+        /* Main Content */
+        .main-content {
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .main-content h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .main-content p {
+            font-size: 1.2em;
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 40px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: #0073e6;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+        }
+
+        .btn:hover {
+            background-color: #005bb5;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 1em;
+        }
+
+        footer a {
+            color: #ff9900;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsiveness */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+
+            .main-content h2 {
+                font-size: 1.8em;
+            }
+
+            .main-content p {
+                font-size: 1em;
+            }
+
+            nav ul li {
+                display: block;
+                margin: 10px 0;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>Profil Kampus XYZ</h1>
+    </header>
+
+    <!-- Navbar -->
+    <nav>
+        <ul>
+            <li><a href="#about">Tentang</a></li>
+            <li><a href="#program">Program Studi</a></li>
+            <li><a href="#tes-minat">Tes Minat</a></li>
+            <li><a href="#contact">Kontak</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main-content" id="about">
+        <h2>Selamat Datang di Kampus XYZ</h2>
+        <p>Kami adalah universitas terkemuka yang berfokus pada pengembangan pendidikan, riset, dan kebudayaan untuk mencetak generasi masa depan yang kompeten di bidangnya.</p>
+        <p>Temukan berbagai program studi yang kami tawarkan dan mulailah perjalanan akademik Anda di sini.</p>
+        <a href="{{ url_for('questions_page') }}" class="btn">Mulai Tes Minat</a>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Kampus XYZ. Semua Hak Cipta Dilindungi.</p>
+        <p>Hubungi kami di <a href="mailto:info@kampusxyz.ac.id">info@kampusxyz.ac.id</a></p>
+    </footer>
+
+</body>
+</html>
